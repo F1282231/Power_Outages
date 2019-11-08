@@ -22,7 +22,7 @@ Codes are written in Jupyter Notebook with Python. Users are recommended to know
 
 ---
 
-## Content (Jupyter Notebooks)
+## Content with Jupyter Notebooks
 
 Users should follow the below order to read through our works, all notebooks have descriptions and comments for the codes:
 
@@ -66,7 +66,7 @@ Our models are built on `twitter_target.csv`, our goal is to find the model that
 The final product we are planning to create is an interactive App that ask users to input a state, and shows users if the state is suffering from major electrical disturbances. We are limited by the time so we only have a Jupyter Notebook working on Flask.
 
 **Below are the Jupyter Notebook for Final Product:**
-- [Final Product](./Code/App_development.ipynb)
+- [Final Product (Unfinished)](./Code/App_development.ipynb)
 
 ---
 
