@@ -54,7 +54,7 @@ def make_predictions():
 
     # loop through each tweet to grab data and append the data to their respective lists
     for tweet in list_of_tweets:
-        locs.append(place)
+        locs.append(state)
         text.append(tweet.text)
         times.append(tweet.timestamp)
 
@@ -83,18 +83,18 @@ def make_predictions():
 
     df['tweet'] = tokens
 
-    df = df.reset_index(drop=True)
-
-    tweets = [tweet for tweet in df['tweet']]
-
-    master_tweets = ' '.join(tweets)
-
     # next we should use our pickled model to predict probability of power outage based on our master_tweets
 
-    model = pickle.load(open('./assets/model.p', 'rb'))
-    prediction = model.predict(master_tweets)[0]
+    model = pickle.load(open('./final_model.p', 'rb'))
+
+    preds_proba = []
+    for tweet in df.drop_duplicates()['tweet']:
+        preds_proba.append(model.predict_proba([tweet])[0][1])
+
+    pred = round(sum(preds_proba)/len(preds_proba), 2)
+
     # return the view
-    return render_template('results.html', prediction=prediction, state=state)
+    return render_template('results.html', pred=(pred * 100), state=state)
 
 
 if __name__ == '__main__':
