@@ -12,23 +12,23 @@ The traditional method to spot a power outage/electrical disturbance is to check
 
 ## Executive Summary
 
-The goal of this project is to develop a tool that will scan twitter for certain posts containing power outage keywords and build a classification model in order to predict which areas are most likely to be suffering from a power outage. The power outage data will be collected on [the U.S. Department of Energy website](https://www.oe.netl.doe.gov/OE417_annual_summary.aspx), the weather data will be collected on [National Oceanic and Atmospheric Administration](https://www.ncdc.noaa.gov/data-access/severe-weather), and we will scrape historical Twitter posts on [Twitter](https://twitter.com) for our twitter data. We will build different types of classification models and select the best model based on the recall score, F1 score, accuracy score of the models.
+The goal of this project is to develop a tool that will scan Twitter for certain posts containing power outage keywords and build a classification model in order to predict which areas are most likely to be suffering from a power outage. The power outage data will be collected on [the U.S. Department of Energy website](https://www.oe.netl.doe.gov/OE417_annual_summary.aspx), the weather data will be collected on [National Oceanic and Atmospheric Administration](https://www.ncdc.noaa.gov/data-access/severe-weather), and we will scrape historical Twitter posts on [Twitter](https://twitter.com) for our Twitter data. We will build different types of classification models and select the best model based on the recall score, F1 score, and accuracy score of the models.
 
 ---
 
 ## Software Requirements
 
-Codes are written in Jupyter Notebook with Python language. Users are recommended to know Python library `Numpy`, `Pandas`, classification models with `Scikit-learn`, visualization with `matplotlib`, and the knowledge of supervised machine learning.
+Codes are written in Jupyter Notebook with Python. Users are recommended to know Python library `Numpy`, `Pandas`, classification models with `Scikit-learn`, visualization with `matplotlib`, and the knowledge of supervised machine learning.
 
 ---
 
 ## Content (Jupyter Notebooks)
 
-Users should follow the below order to read through our work, all notebooks have descriptions and comments for the works:
+Users should follow the below order to read through our works, all notebooks have descriptions and comments for the codes:
 
 ### 1. Data Collection
 
-As mentioned in executive summary, we collected our data on [the U.S. Department of Energy website](https://www.oe.netl.doe.gov/OE417_annual_summary.aspx), [National Oceanic and Atmospheric Administration](https://www.ncdc.noaa.gov/data-access/severe-weather), and we scraped posts on [Twitter](https://twitter.com) by using Twitter scraper. We mainly focus on power outage data and the Twitter data because our model is built on these two data. The weather data we collected is for EDA purpose. The inutition is our findings from power outage data. 
+As mentioned in executive summary, we collected our data on [the U.S. Department of Energy website](https://www.oe.netl.doe.gov/OE417_annual_summary.aspx), [National Oceanic and Atmospheric Administration](https://www.ncdc.noaa.gov/data-access/severe-weather), and we scraped posts on [Twitter](https://twitter.com) by using Twitter scraper. We mainly focus on power outage data and the Twitter data because our model is built on these two data. The weather data we collected is for EDA purpose. The intuition is from our findings in power outage data. 
 
 **Below are the Jupyter Notebooks for Data Collection:**
 - [Twitter Scraper](./Code/Twitter_Scraper.ipynb)
@@ -37,7 +37,7 @@ As mentioned in executive summary, we collected our data on [the U.S. Department
 
 ### 2. Data Cleaning & Merging
 
-We did the data cleaning by dropping missing values, checking data types, and dropping the columns/features we don't need. For twitter data, we removed hyperlinks and words not making sense. For the data merging, we did an inner merge by the common date and location of power outage data and twitter data. The final data we used to build our models is exported from `Combining_Data` notebook.
+We did the data cleaning by dropping missing values, checking data types, and dropping the columns/features we don't need. For Twitter data, we removed hyperlinks and words not making sense. For the data merging, we did an inner merge by the common date and location of power outage data and Twitter data. The final data we used to build our models is exported from `Combining_Data` notebook.
 
 **Below are the Jupyter Notebooks for Data Cleaning & Merging:**
 - [Cleaned Twitter Data](./Code/twitter_cleaning.ipynb)
@@ -45,7 +45,7 @@ We did the data cleaning by dropping missing values, checking data types, and dr
 
 ### 3. EDA
 
-We did the exploratory data analysis (EDA) on power outage data, weathere data, and also the Twitter data. The inutition of collecting weather data is that we found out the power outage events are mostly caused by severe weathere. So we collected weather data and did an EDA on it, details can be found in the weather EDA notebook. For Twitter data, we tried to understand the relationship of the keywords related to power outage events by applying Word2Vec transformer, and created a word cloud for visulization.
+We did the exploratory data analysis (EDA) on power outage data, weather data, and also the Twitter data. The intuition of collecting weather data is that we found out the power outage events are mostly caused by severe weathers. So we collected weather data and did an EDA on it, details can be found in the weather EDA notebook. For Twitter data, we tried to understand the relationship of the keywords related to power outage events by applying Word2Vec transformer, and created a word cloud for visualization.
 
 **Below are the Jupyter Notebook for EDA:**
 - [Twitter EDA](./Code/Twitter_EDA.ipynb)
@@ -55,7 +55,7 @@ We did the exploratory data analysis (EDA) on power outage data, weathere data, 
 
 ### 4. Modeling & Pickle
 
-Our models are built on `twitter_target.csv`, our goal is to find a model that optimizes the F1 score and recall score. We have tried to build Random Forest Classifier, Logistic Regression Model, and Bagging Classifier. The obstacle we had was the unbalanced classes of our data, which we chose to balance two classes by decreasing the majority class. We have imported our final model to a pickle file, as shown in the`Pickle` notebook.
+Our models are built on `twitter_target.csv`, our goal is to find the model that optimizes the F1 score and recall score. We have built Random Forest Classifier, Logistic Regression Model, and Bagging Classifier. The obstacle we had was the unbalanced classes of our data, which we chose to balance two classes by decreasing the majority class. The final model is a bagging classifier built on decreased dataset. We have imported our final model to a pickle file, as shown in the`Pickle` notebook.
 
 **Below are the Jupyter Notebook for Modeling & Pickle:**
 - [Modeling](./Code/Modeling.ipynb)
@@ -63,7 +63,7 @@ Our models are built on `twitter_target.csv`, our goal is to find a model that o
 
 ### 5. Final Product (Unfinished)
 
-Our final product is an interactive App that ask users to input a state, and shows users if the state is suffering from major eletrical disturbances.
+The final product we are planning to create is an interactive App that ask users to input a state, and shows users if the state is suffering from major electrical disturbances. We are limited by the time so we only have a Jupyter Notebook working on Flask.
 
 **Below are the Jupyter Notebook for Final Product:**
 - [Final Product](./Code/App_development.ipynb)
@@ -72,11 +72,11 @@ Our final product is an interactive App that ask users to input a state, and sho
 
 ## Conclusion
 
-We evaluated our final model using F1 score and recall score because optimizing these two matrices can minimize false negative events. Our final classification model is not performing pretty well since it only has 64.36% F1 score and 63.13% recall score. However, it is understandable because we are limited by the number of data we have so we could not train our model effectively. The power outage data we have does not line up well with our Twitter data because most of the posts on Twitter are about local power outages, where our power outage data are major electrical power outages. We could not find useful local power outage historical data because most utility companies tend to not give out historical power outage data, they only provide live feeds of power outage events. As a consequence, our model is more conservative when it is predicting the electrical disturbances, which means it usually classifies small/local power outage events as 0 (false; not a power outage).
+We selected our final model with the highest F1 score and recall score because optimizing these two matrices can minimize false negative events. Our final classification model is not performing pretty well since it only has 64.36% F1 score and 63.13% recall score. However, it is understandable because we are limited by the number of data we have so we could not train our model effectively. The power outage data we have does not line up well with our Twitter data because most of the posts on Twitter are about local power outages, where our power outage data are major electrical power outages. We could not find useful local power outage historical data because most utility companies tend to not give out historical power outage data, they only provide live feeds of power outage events. As a consequence, our model is more conservative when it is predicting the electrical disturbances, which means it usually classifies small/local power outage events as 0 (false; not a power outage).
 
-To improve our model, we definitely need more data and also more detail of the power outage data. Most of our power outage data only have location that is state-level, which gave us a hard time matching the Twitter posts to the power outage events. Another thing we can work on is the keyword selection. We included "blackout" as one of the keywords we scrape from Twitter, which ends up giving us a lot of noises. For example, we have people who are drunk and "blackout".
+To improve our model, we definitely need more power outage data and also more detail of it. Most of our power outage data only have location that is state-level, which gave us a hard time matching the Twitter posts to the power outage events because users on Twitter usually use cities as their location. Another thing we can work on is the keyword selection. We included "blackout" as one of the keywords we scrape from Twitter, which ends up giving us a lot of noises. For example, we have people who are drunk and "blackout".
 
-In summary, the main obastcle is the data collecting. If we had the idea power outage data (which we found can be purchased from [some websites](https://poweroutage.us/products), we could have built a model with higher recall and F1 score. Also, the idea final product of the project is an APP that asks users to select a state, scraps Twitter data based on the selected location and also by the time users selected, feeds our model the scarped Twitter data, and displays the final prediction of whether the state is suffereing from major electrical disturbances. We are confident that we can finish the final product if we have more time.
+In summary, the main obstacle is the data collecting. If we had the idea power outage data and budget (which we found can be purchased from [some websites](https://poweroutage.us/products), we could have built a model with higher recall and F1 score. Also, the idea final product of the project is an App that asks users to select a state, scraps Twitter data based on the selected location and also by the time users selected, feeds our model the scarped Twitter data, and displays the final prediction of whether the state is suffering from major electrical disturbances. We are confident that we can finish the final product if we have more time.
 
 ---
 
