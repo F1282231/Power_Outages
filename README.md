@@ -4,7 +4,7 @@
 
 ---
 
-## Problem Statement: 
+## Problem Statement
 
 The traditional method to spot a power outage/electrical disturbance is to check the live feeds provided by major utility companies or the satellite data that capture the extent of light emitted at night. We will build a tool that identifies the major electrical disturbances using social media posts. Unlike the traditional methods, our tool will identify major electrical disturbances more timely.
 
