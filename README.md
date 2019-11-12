@@ -63,7 +63,7 @@ Our models are built on `twitter_target.csv`, our goal is to find the model that
 
 ### 5. Final Product
 
-The final product is an interactive App that asks users to select a state, and shows users the probabilities of the state suffering from a major electrical disturbance as of the current time. Please click [here](https://youtu.be/gP7jnR8r_M0) for the demonstration video.
+The final product is an interactive App that asks users to select a state, and shows users the probabilities of the state suffering from a major electrical disturbance as of the current time. Please click [here](https://youtu.be/gP7jnR8r_M0) for the demonstration.
 
 **Below are the Jupyter Notebook for Final Product:**
 - [Final Product (Unfinished)](./Code/App_development.ipynb)
