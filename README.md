@@ -66,7 +66,7 @@ Our models are built on `twitter_target.csv`, our goal is to find the model that
 The final product is an interactive App that asks users to select a state, and shows users the probabilities of the state suffering from a major electrical disturbance as of the current time. Please click [here](https://youtu.be/gP7jnR8r_M0) for the demonstration. 
 
 **Below are the Jupyter Notebook for Final Product:**
-- [Final Product (Unfinished)](./Code/App_development.ipynb)
+- [Final Product](./Files/final-product.py)
 
 ---
 
@@ -76,7 +76,7 @@ We selected our final model with the highest F1 score and recall score because o
 
 To improve our model, we definitely need more power outage data and also more detail of it. Most of our power outage data only have location that is state-level, which gave us a hard time matching the Twitter posts to the power outage events because users on Twitter usually use cities as their location. Another thing we can work on is the keyword selection. We included "blackout" as one of the keywords we scrape from Twitter, which ends up giving us a lot of noises. For example, we have people who are drunk and "blackout".
 
-In summary, the main obstacle is the data collecting. If we had the ideal power outage data and budget (which we found can be purchased from [some websites](https://poweroutage.us/products), we could have built a model with higher recall and F1 score. Also, the ideal final product of the project is an App that asks users to select a state, scraps Twitter data based on the selected location and also by the time users selected, feeds our model the scarped Twitter data, and displays the final prediction of whether the state is suffering from major electrical disturbances. We are confident that we can finish the final product if we have more time.
+In summary, the main obstacle is the data collecting. If we had the ideal power outage data and budget (which we found can be purchased from [some websites](https://poweroutage.us/products), we could have built a model with higher recall and F1 score. 
 
 ---
 
