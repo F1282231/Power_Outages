@@ -61,9 +61,9 @@ Our models are built on `twitter_target.csv`, our goal is to find the model that
 - [Modeling](./Code/Modeling.ipynb)
 - [Pickle](./Code/Pickle.ipynb)
 
-### 5. Final Product (Unfinished)
+### 5. Final Product
 
-The final product we are planning to create is an interactive App that ask users to input a state, and shows users if the state is suffering from major electrical disturbances. We are limited by the time so we only have a Jupyter Notebook working on Flask.
+The final product we have here is an interactive App that asks users to select a state, and shows users the probabilities of the state suffering from a major electrical disturbance as of the current time. Please click [here](https://youtu.be/gP7jnR8r_M0) for the demonstration video.
 
 **Below are the Jupyter Notebook for Final Product:**
 - [Final Product (Unfinished)](./Code/App_development.ipynb)
